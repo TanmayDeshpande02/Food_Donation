@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
-import {Login} from './Pages/index';
-import {Register} from './Pages/index';
+import {Login, Register, AddRawFood,AddLOF} from './Pages/index';
+
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
 
@@ -10,9 +11,10 @@ function App() {
   }
   return (
     <div className="App">
-      {
+      {/* {
         currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm}/>
-      }
+      } */}
+      <AddLOF/>
     </div>
    
   );
