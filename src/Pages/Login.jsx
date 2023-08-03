@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './Log-reg.css';
-
  const Login = (props) => {
     const [phonenumber, setphonenumber] = useState('');
     const [pass, setPass] = useState('');
@@ -18,8 +17,7 @@ import './Log-reg.css';
                 <label htmlFor="password">password</label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" ******** " id="password" name="password" />
                 <div>
-                <label className="checkbox" for="rememberMe">Remember me   </label>
-                <input className="box" type="checkbox" value="lsRememberMe" id="rememberMe" />
+                    <br/>
                 </div>
                 <button className="submitbutton" type="submit">Log In</button>  
             </form>
