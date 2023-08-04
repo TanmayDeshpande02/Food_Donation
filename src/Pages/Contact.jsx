@@ -1,6 +1,5 @@
 import React from 'react'
 import './Contact.css'
-
 import { useRef } from 'react';
 import emailjs from 'emailjs-com'
 
@@ -45,7 +44,6 @@ export const Contact = () => {
     return (
       <section id='contact'>
         <h2 className='title'>Contact Us</h2>
-  
         <div className="container contact__container">
           <div className="contact__options">
             {/* <article className='contact__option'>
@@ -71,7 +69,7 @@ export const Contact = () => {
             <input type="text" name="name" placeholder='Your Full Name' required/>
             <input type="email" name="email" placeholder='Your Email Id' required/>
             <textarea type="text" rows='7' name='message' placeholder='Your Message' required></textarea>
-            <button type='submit' className='btn'>Send Message</button>
+            <button type='submit' className='butn'>Send Message</button>
           </form>
         </div>
       </section>

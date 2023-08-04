@@ -5,6 +5,8 @@ import {Register} from './Pages/index';
 import Navbar from "./Component/Navbar";
 import Footer from "./Component/Footer";
 import Contact from "./Pages/Contact";
+import Home from "./Component/Home";
+import Services from "./Component/Services";
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
 
@@ -14,12 +16,15 @@ function App() {
   return (
     <>
     <Navbar />
-    <Contact/>
+    <Home/>
+    <Services/>
+
+    {/* <Contact/>
     <div className="App">
       {
         currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm}/>
       }
-    </div>
+    </div> */}
     <Footer/>
     </>
   );

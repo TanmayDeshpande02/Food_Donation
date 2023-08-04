@@ -2,19 +2,22 @@
     width: 58%;
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 12%;
+    gap: 10%;
 }
+
 .contact{
     align-items: center;
     background-color: #ececec;
 }
 .Contact-form input{
     border: 2px solid rgb(1, 1, 1);
+    width: 400px;
+    height: 0px;
 }
 .Contact-form textarea{
     border: 2px solid rgb(1, 1, 1);
+    width: 400px;
 }
-
 .title{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -29,11 +32,11 @@
 .contact__options{
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 .contact__option{
     background: var(--color-bg-variant);
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 1.2rem;
     text-align: center;
     border: 1px solid transparent;
@@ -53,7 +56,10 @@
     font-size: 0.8rem;
 }
 .btn{
-    font-size: large;
+    font-size: small;
+}
+.btn :hover{
+    color: blue;
 }
 /*---------Form-----------------*/
 form{
@@ -72,8 +78,6 @@ input,textarea{
     resize: none;
     color: var(--color-white);
 }
-
-
 
 /*------------------MEDIA QUERIES (RESPONSIVE)[MEDIUM DEVICES]---------------*/
 @media screen and (max-width: 1024px) {
