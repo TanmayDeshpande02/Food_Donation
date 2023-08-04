@@ -1,4 +1,3 @@
-
 .container.contact__container{
     width: 58%;
     display: grid;
@@ -15,10 +14,10 @@
 }
 .heading{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 #contact{
-    padding-bottom: 25px;
+    padding-bottom: 35px;
 }
 .contact__options{
     display: flex;
@@ -46,7 +45,9 @@
     display: inline-block;
     font-size: 0.8rem;
 }
-
+.btn{
+    font-size: large;
+}
 /*---------Form-----------------*/
 form{
     display: flex;

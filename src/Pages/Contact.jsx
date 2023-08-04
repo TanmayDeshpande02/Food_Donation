@@ -44,7 +44,7 @@ export const Contact = () => {
   //   };
     return (
       <section id='contact'>
-        <h2 className='title'>Contact US</h2>
+        <h2 className='title'>Contact Us</h2>
   
         <div className="container contact__container">
           <div className="contact__options">
@@ -71,7 +71,7 @@ export const Contact = () => {
             <input type="text" name="name" placeholder='Your Full Name' required/>
             <input type="email" name="email" placeholder='Your Email Id' required/>
             <textarea type="text" rows='7' name='message' placeholder='Your Message' required></textarea>
-            <button type='submit' className='btn btn-primary butn'>Send Message</button>
+            <button type='submit' className='btn'>Send Message</button>
           </form>
         </div>
       </section>
