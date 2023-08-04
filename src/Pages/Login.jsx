@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Log-reg.css';
+
  const Login = (props) => {
     const [phonenumber, setphonenumber] = useState('');
     const [pass, setPass] = useState('');
@@ -10,15 +11,14 @@ import './Log-reg.css';
     return (
         <>
         <div className="auth-form-container">
-            <h2>Login</h2>
+            <h1>Login</h1>
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="phonenumber">Phone Number</label>
                 <input value={phonenumber} onChange={(e) => setphonenumber(e.target.value)}type="number" placeholder="1234567890" id="phonenumber" name="phonenumber" />
                 <label htmlFor="password">password</label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" ******** " id="password" name="password" />
                 <div>
-                    <br/>
-                </div>
+               </div>
                 <button className="submitbutton" type="submit">Log In</button>  
             </form>
             <p>

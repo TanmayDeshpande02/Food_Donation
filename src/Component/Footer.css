@@ -1,6 +1,9 @@
 /* Footer Container */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
 .footer {
-    background-color: #333;
+    background-color: #0052c4;
     color: #fff;
     padding: 20px 0;
   }
