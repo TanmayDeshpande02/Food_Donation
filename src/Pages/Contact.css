@@ -8,6 +8,13 @@
     align-items: center;
     background-color: #ececec;
 }
+.Contact-form input{
+    border: 2px solid rgb(1, 1, 1);
+}
+.Contact-form textarea{
+    border: 2px solid rgb(1, 1, 1);
+}
+
 .title{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
