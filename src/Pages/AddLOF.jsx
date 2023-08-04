@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Log-reg.css';
+import {Navbar} from "../Component/index.js";
 
 const AddLOF = (props) => {
     const [Name, setName] = useState('');
@@ -12,6 +13,9 @@ const AddLOF = (props) => {
     }
     return (
         <>
+         
+      <div className="App">
+      <Navbar />
             <div className="auth-form-container">
                 <h2>Add Raw Food</h2>
                 <form className="login-form" onSubmit={handleSubmit}>
@@ -27,6 +31,7 @@ const AddLOF = (props) => {
                 </form>
 
             </div>
+        </div>
         </>
     );
 };
