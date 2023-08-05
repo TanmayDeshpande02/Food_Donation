@@ -1,5 +1,7 @@
 import React from 'react';
 import backgroundImage from './image1.jpg';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Home = () => {
   const divStyle = {
@@ -20,6 +22,7 @@ const Home = () => {
   };
   return (
     <>
+
        <section className="home">
      <div id="carouselE" className="slide" style={divStyle} >
         <div className="content"  style={contentStyle}>
@@ -30,6 +33,7 @@ const Home = () => {
         </div>
       </div>
     </section>
+
     </>
   )
 }
