@@ -2,6 +2,7 @@ import React from 'react';
 import backgroundImage from './image1.jpg';
 import Navbar from '../Component/Navbar';
 import Footer from '../Component/Footer';
+import { Services } from '../Component';
 
 const Home = () => {
   const divStyle = {
@@ -11,20 +12,39 @@ const Home = () => {
     height: '100vh',
   };
   const contentStyle = {
-    position: 'absolute', // Set the content to an absolute position within the container
-    top: '50%', // Position the content at the vertical center
-    left: '50%', // Position the content at the horizontal center
-    transform: 'translate(-50%, -50%)', // Center the content precisely
-    textAlign: 'center', // Center the text within the content
-    color: 'white', // Set the text color
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    textAlign: 'center',
+    borderRadius:'5px',
+    padding: '20px', // Add padding for better visibility
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Background color with opacity
+    color: 'white',
     fontSize: '36px',
-
+    opacity: 0,
+    animation: 'fade-in 2s ease-out forwards',
   };
+
   return (
     <>
+      <style>
+        {`
+          @keyframes fade-in {
+            0% {
+              opacity: 0;
+              transform: translate(-50%, -60%);
+            }
+            100% {
+              opacity: 1;
+              transform: translate(-50%, -50%);
+            }
+          }
+        `}
+      </style>
       <Navbar />
       <section className="home">
-        <div id="carouselE" className="slide" style={divStyle} >
+        <div id="carouselE" className="slide" style={divStyle}>
           <div className="content" style={contentStyle}>
             <span>Donate Help !!!</span>
             <h3>Giving is not about making Donations</h3>
@@ -33,8 +53,10 @@ const Home = () => {
           </div>
         </div>
       </section>
-    <Footer/>
+      <Services />
+      <Footer />
     </>
-  )
-}
+  );
+};
+
 export default Home;

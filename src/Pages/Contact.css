@@ -1,8 +1,11 @@
 .container.contact__container{
-    width: 58%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 10%;
+    width: 100%; /* Change the width to 100% for mobile devices */
+    display: flex;
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    padding-top: 30px;
+}
+.contact .borderr{
+    border: 2px solid black;
 }
 .contact{
     align-items: center;
@@ -19,6 +22,8 @@
 }
 .title{
     text-align: center;
+    padding-top: 150px;
+    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .heading{
@@ -54,13 +59,15 @@
     display: inline-block;
     font-size: 0.8rem;
 }
-.btn{
-    font-size: small;
+
+button{
+    color: rgb(21, 24, 24);
+    background-color: rgb(101, 99, 214);
+    width: 200px;
 }
-.btn :hover{
-    color: rgb(79, 79, 255);
+button::hover{
+    background-color: aliceblue;
 }
-/*---------Form-----------------*/
 form{
     display: flex;
     flex-direction: column;
