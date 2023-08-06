@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import './Log-reg.css';
+import { Footer } from '../Component/index.js'
 
- const Login = (props) => {
+const Login = (props) => {
     const [phonenumber, setphonenumber] = useState('');
     const [pass, setPass] = useState('');
     const handleSubmit = (e) => {
@@ -10,22 +11,25 @@ import './Log-reg.css';
     }
     return (
         <>
-        <div className="auth-form-container">
-            <h1>Login</h1>
-            <form className="login-form" onSubmit={handleSubmit}>
-                <label htmlFor="phonenumber">Phone Number</label>
-                <input value={phonenumber} onChange={(e) => setphonenumber(e.target.value)}type="number" placeholder="1234567890" id="phonenumber" name="phonenumber" />
-                <label htmlFor="password">password</label>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" ******** " id="password" name="password" />
-                <div>
-               </div>
-                <button className="submitbutton" type="submit">Log In</button>  
-            </form>
-            <p>
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
-            
-            </p>
-        </div>
+            <div className="App">
+                <div className="auth-form-container">
+                    <h1>Login</h1>
+                    <form className="login-form" onSubmit={handleSubmit}>
+                        <label htmlFor="phonenumber">Phone Number</label>
+                        <input value={phonenumber} onChange={(e) => setphonenumber(e.target.value)} type="number" placeholder="1234567890" id="phonenumber" name="phonenumber" />
+                        <label htmlFor="password">password</label>
+                        <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder=" ******** " id="password" name="password" />
+                        <div>
+                        </div>
+                        <button className="submitbutton" type="submit">Log In</button>
+                    </form>
+                    <p>
+                        <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register here.</button>
+
+                    </p>
+                </div>
+            </div>
+        <Footer/>
         </>
     );
 };

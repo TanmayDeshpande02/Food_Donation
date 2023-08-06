@@ -1,7 +1,7 @@
 import React from 'react';
 import backgroundImage from './image1.jpg';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from '../Component/Navbar';
+import Footer from '../Component/Footer';
 
 const Home = () => {
   const divStyle = {
@@ -22,18 +22,18 @@ const Home = () => {
   };
   return (
     <>
-
-       <section className="home">
-     <div id="carouselE" className="slide" style={divStyle} >
-        <div className="content"  style={contentStyle}>
-          <span>Donate Help !!!</span>
-          <h3>Giving is not about making Donations</h3>
-          <br />
-          <h3>" Its about making a change"</h3>
+      <Navbar />
+      <section className="home">
+        <div id="carouselE" className="slide" style={divStyle} >
+          <div className="content" style={contentStyle}>
+            <span>Donate Help !!!</span>
+            <h3>Giving is not about making Donations</h3>
+            <br />
+            <h3>" Its about making a change"</h3>
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+    <Footer/>
     </>
   )
 }

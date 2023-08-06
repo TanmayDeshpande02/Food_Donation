@@ -12,11 +12,11 @@ const Navbar = () => {
         <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      {/* <div style={{ display: 'flex', alignItems: 'center' }}>
         <a href="/login" className="nav-link" style={{ marginRight: '2rem' }}>
           Login
         </a>
-        </div>
+        </div> */}
     </nav>
   );
 };

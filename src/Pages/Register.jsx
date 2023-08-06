@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Log-reg.css';
+import {Footer} from '../Component/index.js';
 
 const Register = (props) => {
     const [phonenumber, setphonenumber] = useState('');
@@ -12,6 +13,7 @@ const Register = (props) => {
     }
     return (
         <>
+        <div className="App">
         <div className="auth-form-container">
             <h2>Register</h2>
         <form className="register-form" onSubmit={handleSubmit}>
@@ -23,6 +25,7 @@ const Register = (props) => {
             <button className="submitbutton" type="submit">Log In</button>
         </form>
         <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account?  Login here.</button>
+    </div>
     </div>
     </>
     );

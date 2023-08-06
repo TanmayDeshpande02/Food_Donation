@@ -14,8 +14,7 @@ const AddLOF = (props) => {
     return (
         <>
         <Navbar/>
-      <div className="App">
-      {/* <Navbar /> */}
+      <div className="App">     
             <div className="auth-form-container">
                 <h2>Add Left Over Food</h2>
                 <form className="login-form" onSubmit={handleSubmit}>
