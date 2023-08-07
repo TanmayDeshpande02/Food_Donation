@@ -2,7 +2,15 @@ import React from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-  const isLoggedIn = false; // Replace with your authentication logic
+  let isLoggedIn = false;
+  if(localStorage.getItem("name")!= ""){
+    isLoggedIn = true;
+  }
+ 
+  // const isLoggedInString = localStorage.getItem("name");
+  // const isLoggedIn = JSON.parse(isLoggedInString);
+
+  // console.log(isLoggedIn);
 
   return (
     <nav className="navbar">
