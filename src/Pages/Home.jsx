@@ -3,6 +3,7 @@ import backgroundImage from './image1.jpg';
 import Navbar from '../Component/Navbar';
 import Footer from '../Component/Footer';
 import { Services } from '../Component';
+import {HomeAbout }from '../Component';
 
 const Home = () => {
   const divStyle = {
@@ -54,6 +55,7 @@ const Home = () => {
         </div>
       </section>
       <Services />
+      <HomeAbout/>
       <Footer />
     </>
   );

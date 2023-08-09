@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './Log-reg.css';
-import { Footer } from '../Component/index.js';
-import app from "../firebaseConfig"; 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import app from '../firebaseConfig'
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+
+  } from 'firebase/auth'
 
 const Register = (props) => {
     const navigate = useNavigate(); // Initialize useNavigate
@@ -16,11 +19,10 @@ const Register = (props) => {
         e.preventDefault();
 
         const auth = getAuth();
-
+        
         createUserWithEmailAndPassword(auth, email, pass)
             .then((userCredential) => {
-                const user = userCredential.user;
-                console.log("User registered:", user);
+                console.log('user created:', userCredential.user)
                 setRegistrationSuccess(true);
                 setTimeout(() => {
                     navigate('/login');
@@ -35,7 +37,7 @@ const Register = (props) => {
 
     return (
         <>
-            <div className="App">
+            <div className="App Register">
                 <div className="auth-form-container">
                     <h2>Register</h2>
                     {registrationSuccess ? (

@@ -1,33 +1,70 @@
-import React from 'react';
-import './Navbar.css';
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
+import app from '../firebaseConfig'
+import {
+  getAuth,
+  signOut,
+} from "firebase/auth";
 
 const Navbar = () => {
-  let isLoggedIn = false;
-  if(localStorage.getItem("name")!= ""){
-    isLoggedIn = true;
-  }
- 
-  // const isLoggedInString = localStorage.getItem("name");
-  // const isLoggedIn = JSON.parse(isLoggedInString);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const auth = getAuth();
 
-  // console.log(isLoggedIn);
+  useEffect(() => {
+    if (localStorage.getItem("email")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("email");
+    setIsLoggedIn(false);
+
+    signOut(auth)
+      .then(() => {
+        console.log("user signed out");
+        setTimeout(() => {
+          alert("Successfully logged out");
+          navigate("/home"); 
+        }, 500);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
     <nav className="navbar">
       <div className="logo">Food Donation</div>
       <ul className="nav-links">
-        <li><a href="home">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li>
+          <a href="/home">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Services</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
       </ul>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         {isLoggedIn ? (
-          <a href="/logout" className="nav-link" style={{ marginRight: '2rem' }}>
+          <button
+            onClick={handleLogout}
+            className="nav-link"
+            style={{ marginRight: "2rem" }}
+          >
             Logout
-          </a>
+          </button>
         ) : (
-          <a href="/login" className="nav-link" style={{ marginRight: '2rem' }}>
+          <a href="/login" className="nav-link" style={{ marginRight: "2rem" }}>
             Login / Register
           </a>
         )}

@@ -1,7 +1,11 @@
 
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore"
-
+import { getFirestore, collection} from "firebase/firestore"
+// , onSnapshot,
+//   addDoc, deleteDoc, doc,
+//   query, where,
+//   orderBy, serverTimestamp,
+//   updateDoc
 const firebaseConfig = {
   apiKey: "AIzaSyDcbGKlN-IWLcmArDtUs52SVp9Qigc9_8U",
   authDomain: "food-donation-55512.firebaseapp.com",
@@ -14,5 +18,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const database = getFirestore(app);
+
+export const db= getFirestore(app);
+export const colRef = collection(db, 'RawFood');
+
+
 

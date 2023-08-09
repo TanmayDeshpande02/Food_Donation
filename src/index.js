@@ -14,6 +14,8 @@ import {
   Contact,
   Login,
   Register,
+  ThankYou,
+  Show
 } from "./Pages/index.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -27,6 +29,8 @@ root.render(
         <Route path="/Login" element={<Login />} />
         <Route path="/Contact" element={<Contact />} />        
         <Route path="/Register" element={<Register />} />
+        <Route path="/ThankYou" element={<ThankYou />} />
+        <Route path="/Show" element={ <Show />} />
         {/* <Route path="/checkout" element={<Checkout />} /> */}
         {/* <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         <Route path="*" element={<PageNotFound />} />
