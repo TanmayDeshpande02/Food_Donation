@@ -73,7 +73,7 @@ const AddLOF = (props) => {
             <input required
               value={Expiry}
               onChange={(e) => setExpiry(e.target.value)}
-              type="datetime-local"
+              type='datetime-local'
               placeholder="0"
               id="Expiry"
               name="Expiry"

@@ -100,7 +100,7 @@ const Show = () => {
             <th style={thStyle}>Serving</th>
             <th style={thStyle}>Expiry(YYYY-MM-DD)</th>
             <th style={thStyle}>Contact Number</th>
-            <th style={thStyle}>Request</th>
+            {/* <th style={thStyle}>Request</th> */}
             {/* Add more table headers if needed */}
           </tr>
         </thead>
@@ -111,9 +111,9 @@ const Show = () => {
               <td style={tdStyle}>{item.Serving}</td>
               <td style={tdStyle}>{item.Expiry}</td>
               <td style={tdStyle}>{item.Phone}</td>
-              <td style={thStyle}>
+              {/* <td style={thStyle}>
                 <button onClick={() => sendEmail(item)}>Request</button>
-              </td>
+              </td> */}
               {/* Add more table cells if needed */}
             </tr>
           ))}
