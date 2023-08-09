@@ -8,7 +8,6 @@ const AddRawFood = (props) => {
     const [Image, setImage] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-
     }
     return (
         <>
@@ -21,8 +20,6 @@ const AddRawFood = (props) => {
                         <input value={Name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" id="Name" name="Name" />
                         <label htmlFor="Quantity">Quantity</label>
                         <input value={Quantity} onChange={(e) => setQuantity(e.target.value)} type="number" placeholder="0" id="Quantity" name="Quantity" />
-                        <label htmlFor="Image">Add Image</label>
-                        <input value={Image} onChange={(e) => setImage(e.target.value)} type="file" id="Image" name="Image" />
                         <button className="submitbutton" type="submit">Submit</button>
                     </form>
 

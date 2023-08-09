@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { getDocs, query, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
-const Show = () => {
+const Donations = () => {
   const [data, setData] = useState([]);
+  const donorPhoneNumber = localStorage.getItem("hasdonated"); // Retrieve the donor's phone number from local storage
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,19 +16,13 @@ const Show = () => {
         }));
         const currentDate = new Date();
 
-        const validData = fetchedData.filter((item) => {
+        // Filter the fetched data to show only the items donated by the donor
+        const donorData = fetchedData.filter((item) => item.Phone === donorPhoneNumber);
+
+        // Further filter to only include items with expiry date greater than current date
+        const validData = donorData.filter((item) => {
           const expiryDate = new Date(item.Expiry);
-          if (expiryDate > currentDate) {
-            return true;
-          } else {
-            // Delete the data from Firebase and return false to filter out
-            const docRef = doc(db, "RawFood", item.id);
-            deleteDoc(docRef)
-              .catch((error) => {
-                console.error("Error deleting document:", error);
-              });
-            return false;
-          }
+          return expiryDate > currentDate;
         });
 
         setData(validData);
@@ -36,7 +31,7 @@ const Show = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [donorPhoneNumber]);
 
   const containerStyle = {
     textAlign: "center",
@@ -65,9 +60,22 @@ const Show = () => {
     backgroundColor: "#f0f0f0",
   };
 
+  const handleDelete = async (id) => {
+    const docRef = doc(db, "RawFood", id);
+
+    try {
+      await deleteDoc(docRef);
+      // Remove the deleted item from the data state
+      setData((prevData) => prevData.filter((item) => item.id !== id));
+      console.log("Document successfully deleted!");
+    } catch (error) {
+      console.error("Error deleting document:", error);
+    }
+  };
+
   return (
     <div style={containerStyle}>
-      <h1>Available Food</h1>
+      <h1>Donations Made by You</h1>
       <table style={tableStyle}>
         <thead>
           <tr>
@@ -75,7 +83,7 @@ const Show = () => {
             <th style={thStyle}>Serving</th>
             <th style={thStyle}>Expiry(YYYY-MM-DD)</th>
             <th style={thStyle}>Contact Number</th>
-            <th style={thStyle}>Request</th>
+            <th style={thStyle}>Delete</th>
             {/* Add more table headers if needed */}
           </tr>
         </thead>
@@ -86,8 +94,8 @@ const Show = () => {
               <td style={tdStyle}>{item.Serving}</td>
               <td style={tdStyle}>{item.Expiry}</td>
               <td style={tdStyle}>{item.Phone}</td>
-              <td style={thStyle} >
-                <button>Request</button>
+              <td style={thStyle}>
+                <button onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
               {/* Add more table cells if needed */}
             </tr>
@@ -97,4 +105,5 @@ const Show = () => {
     </div>
   );
 };
-export default Show;
+
+export default Donations;

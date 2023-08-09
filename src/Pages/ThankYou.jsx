@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const ThankYou = () => {
     const navigate = useNavigate(); 
     setTimeout(() => {
-        navigate('/Home');
-    }, 3000);
+        navigate('/');
+    }, 2000);
   const containerStyle = {
     display: 'flex',
     justifyContent: 'center',

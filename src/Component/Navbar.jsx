@@ -29,7 +29,7 @@ const Navbar = () => {
         console.log("user signed out");
         setTimeout(() => {
           alert("Successfully logged out");
-          navigate("/home"); 
+          navigate("/"); 
         }, 500);
       })
       .catch((err) => {
@@ -42,16 +42,16 @@ const Navbar = () => {
       <div className="logo">Food Donation</div>
       <ul className="nav-links">
         <li>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#">About</a>
         </li>
         <li>
           <a href="#">Services</a>
-        </li>
+        </li> */}
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/contact">Contact US</a>
         </li>
       </ul>
       <div style={{ display: "flex", alignItems: "center" }}>

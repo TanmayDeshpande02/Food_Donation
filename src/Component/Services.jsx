@@ -52,7 +52,7 @@ const Services = () => {
         <div style={boxStyle} className="box">
           <h1 style={headingStyle}>In Need?</h1>
           <button className="hover-button">
-            <a style={linkStyle} href="">
+            <a style={linkStyle} href="/show">
               Click Here to Receive
             </a>
           </button>

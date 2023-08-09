@@ -15,10 +15,11 @@ const AddLOF = (props) => {
   const [Name, setName] = useState("");
   const [Serving, setServing] = useState("");
   const [Expiry, setExpiry] = useState("");
-  const [Image, setImage] = useState("");
+  const [Phone, setPhone] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    localStorage.setItem('hasdonated',Phone);
 
     try {
       const db = getFirestore();
@@ -26,7 +27,7 @@ const AddLOF = (props) => {
         Name: Name,
         Serving: Serving,
         Expiry: Expiry,
-        Image: Image,
+        Phone:Phone,
         Timestamp: serverTimestamp(),
       });
 
@@ -34,9 +35,9 @@ const AddLOF = (props) => {
       setName("");
       setServing("");
       setExpiry("");
-      setImage("");
+      setPhone("");
       setTimeout(() => {
-        navigate('/home');
+        navigate('/ThankYou');
     }, 2000);
     } catch (error) {
       console.error("Error adding document: ", error);
@@ -51,7 +52,7 @@ const AddLOF = (props) => {
           <h2>Add Left Over Food</h2>
           <form className="login-form" onSubmit={handleSubmit}>
             <label htmlFor="Name">Name</label>
-            <input
+            <input required
               value={Name}
               onChange={(e) => setName(e.target.value)}
               type="text"
@@ -60,7 +61,7 @@ const AddLOF = (props) => {
               name="Name"
             />
             <label htmlFor="Serving">Serving</label>
-            <input
+            <input required
               value={Serving}
               onChange={(e) => setServing(e.target.value)}
               type="number"
@@ -68,23 +69,25 @@ const AddLOF = (props) => {
               id="Serving"
               name="Serving"
             />
-            <label htmlFor="Expiry">Expiry in days</label>
-            <input
+            <label htmlFor="Expiry">Valid till</label>
+            <input required
               value={Expiry}
               onChange={(e) => setExpiry(e.target.value)}
-              type="number"
+              type="datetime-local"
               placeholder="0"
               id="Expiry"
               name="Expiry"
             />
-            <label htmlFor="Image">Add Image</label>
-            <input
-              value={Image}
-              onChange={(e) => setImage(e.target.value)}
-              type="file"
-              id="Image"
-              name="Image"
+             <label htmlFor="Expiry" >Contact Number </label>
+            <input required
+              value={Phone}
+              onChange={(e) => setPhone(e.target.value)}
+              type="tel"
+              placeholder="0"
+              id="Phone"
+              name="Phone"
             />
+          
             <button className="submitbutton" type="submit" to="/ThankYou">
               Submit
             </button>

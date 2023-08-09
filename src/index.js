@@ -15,7 +15,9 @@ import {
   Login,
   Register,
   ThankYou,
-  Show
+  Show,
+  Donations,
+  PageNotFound
 } from "./Pages/index.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,14 +25,16 @@ root.render(
     <Provider store={store}>
       <Routes>
         {/* <Route element={<RequiredAuth/>}/> */}
-        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/AddLOF" element={<AddLOF />} />
-        <Route path="/AddRawFood" element={<AddRawFood />} />
+        {/* <Route path="/AddRawFood" element={<AddRawFood />} /> */}
         <Route path="/Login" element={<Login />} />
         <Route path="/Contact" element={<Contact />} />        
         <Route path="/Register" element={<Register />} />
         <Route path="/ThankYou" element={<ThankYou />} />
         <Route path="/Show" element={ <Show />} />
+        <Route path="/Donations" element={ <Donations />} />
+        <Route path="/PageNotFound" element={ <PageNotFound />} />
         {/* <Route path="/checkout" element={<Checkout />} /> */}
         {/* <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         <Route path="*" element={<PageNotFound />} />

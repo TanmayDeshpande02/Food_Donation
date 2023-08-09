@@ -6,3 +6,5 @@ export {default as AddLOF} from "./AddLOF";
 export {default as Home} from "./Home";
 export {default as ThankYou} from "./ThankYou";
 export {default as Show} from "./Show";
+export {default as Donations} from "./Donations";
+export {default as PageNotFound} from "./PageNotFound";
