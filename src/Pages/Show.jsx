@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, query, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebaseConfig";
+import emailjs from "emailjs-com";
 
 const Show = () => {
   const [data, setData] = useState([]);
@@ -20,16 +21,13 @@ const Show = () => {
           if (expiryDate > currentDate) {
             return true;
           } else {
-            // Delete the data from Firebase and return false to filter out
             const docRef = doc(db, "RawFood", item.id);
-            deleteDoc(docRef)
-              .catch((error) => {
-                console.error("Error deleting document:", error);
-              });
+            deleteDoc(docRef).catch((error) => {
+              console.error("Error deleting document:", error);
+            });
             return false;
           }
         });
-
         setData(validData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -37,6 +35,33 @@ const Show = () => {
     };
     fetchData();
   }, []);
+
+  const sendEmail = (item) => {
+    const templateParams = {
+      name: item.Name,
+      serving: item.Serving,
+      expiry: item.Expiry,
+      contactNumber: item.Phone,
+    };
+
+    emailjs
+      .send(
+        "service_3twzkje",
+        "template_6ge2bld",
+        templateParams,
+        "user_jqkCfJNgbukRgedru"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("Message sent");
+          alert("Message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   const containerStyle = {
     textAlign: "center",
@@ -86,8 +111,8 @@ const Show = () => {
               <td style={tdStyle}>{item.Serving}</td>
               <td style={tdStyle}>{item.Expiry}</td>
               <td style={tdStyle}>{item.Phone}</td>
-              <td style={thStyle} >
-                <button>Request</button>
+              <td style={thStyle}>
+                <button onClick={() => sendEmail(item)}>Request</button>
               </td>
               {/* Add more table cells if needed */}
             </tr>
