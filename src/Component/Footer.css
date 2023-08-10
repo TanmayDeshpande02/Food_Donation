@@ -1,0 +1,62 @@
+/* Footer Container */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+.footer {
+    background-color: #102a4e;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  /* Footer Content */
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Footer Logo */
+  .footer-logo {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links li a:hover {
+    color: #ff9900;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 1024px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-logo {
+      margin-bottom: 10px;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+    }
+  }
+  
