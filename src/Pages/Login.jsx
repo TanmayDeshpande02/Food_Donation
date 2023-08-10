@@ -19,7 +19,7 @@ const Login = (props) => {
 
         try {
             await signInWithEmailAndPassword(auth, email, pass);
-            navigate('/home'); 
+            navigate('/'); 
         } catch (error) {
             console.error("Login error:", error.message);
         }
@@ -54,7 +54,7 @@ const Login = (props) => {
                         <button className="submitbutton" type="submit">Log In</button>
                     </form>
                     <p>
-                        <button className="link-btn" onClick={() => props.onFormSwitch('register')}>
+                        <button className="link-btn" onClick={() => navigate('/register')}>
                             Don't have an account? Register here.
                         </button>
                     </p>

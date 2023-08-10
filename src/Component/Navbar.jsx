@@ -7,6 +7,9 @@ import {
   signOut,
 } from "firebase/auth";
 
+const donated = localStorage.getItem("hasdonated");
+
+console.log(donated);
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
@@ -29,6 +32,7 @@ const Navbar = () => {
         console.log("user signed out");
         setTimeout(() => {
           alert("Successfully logged out");
+          localStorage.clear();
           navigate("/"); 
         }, 500);
       })
@@ -44,9 +48,15 @@ const Navbar = () => {
         <li>
           <a href="/">Home</a>
         </li>
-        {/* <li>
-          <a href="#">About</a>
+         <li>
+         {donated !== null ? (
+           <a href="/Donations"> Your Donations</a>
+        ) : (
+          <a href="/PageNotFound"> Your Donations</a>
+        )}
+         
         </li>
+        {/*
         <li>
           <a href="#">Services</a>
         </li> */}

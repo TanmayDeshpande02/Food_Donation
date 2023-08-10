@@ -1,16 +1,19 @@
 import React from 'react';
 import './Footer.css';
 const Footer = () => {
+
+  const Style = {
+    border: "1px solid #ccc",
+    padding: "10px",
+    textAlign: "center"
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
-        {/* <div className="footer-logo">My Website</div>
-        <ul className="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul> */}
+       <p style={Style} >
+       The food we throw away is as good as stolen from the poor.
+       </p>
       </div>
     </footer>
   );
