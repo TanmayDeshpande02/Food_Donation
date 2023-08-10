@@ -49,7 +49,7 @@ const AddLOF = (props) => {
       <Navbar />
       <div className="App">
         <div className="auth-form-container">
-          <h2>Add Left Over Food</h2>
+          <h2>Add Food</h2>
           <form className="login-form" onSubmit={handleSubmit}>
             <label htmlFor="Name">Name</label>
             <input required
@@ -87,7 +87,6 @@ const AddLOF = (props) => {
               id="Phone"
               name="Phone"
             />
-          
             <button className="submitbutton" type="submit" to="/ThankYou">
               Submit
             </button>

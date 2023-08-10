@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Services = () => {
+  const data = localStorage.getItem("email");
   const containerStyle = {
     display: 'grid',
     borderRadius: '10px',
@@ -43,9 +44,12 @@ const Services = () => {
         <div style={boxStyle} className="box">
           <h1 style={headingStyle}>Just want to make a small Change</h1>
           <button className="hover-button">
-            <a style={linkStyle} href="/AddLOF">
-              Click Here to donate
-            </a>
+          {data !== null ? (
+           <a style={linkStyle}  href="/AddLOF"> Click Here to donate</a>
+          ) : (
+          <a style={linkStyle}  href="/pleaselogin"> Click Here to donate</a>
+          )}
+            
           </button>
         </div>
 

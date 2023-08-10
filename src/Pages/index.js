@@ -8,3 +8,5 @@ export {default as ThankYou} from "./ThankYou";
 export {default as Show} from "./Show";
 export {default as Donations} from "./Donations";
 export {default as PageNotFound} from "./PageNotFound";
+export {default as Pleaselogin} from "./Pleaselogin";
+

@@ -17,7 +17,8 @@ import {
   ThankYou,
   Show,
   Donations,
-  PageNotFound
+  PageNotFound,
+  Pleaselogin
 } from "./Pages/index.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +36,7 @@ root.render(
         <Route path="/Show" element={ <Show />} />
         <Route path="/Donations" element={ <Donations />} />
         <Route path="/PageNotFound" element={ <PageNotFound />} />
+        <Route path="/Pleaselogin" element={ <Pleaselogin />} />
         {/* <Route path="/checkout" element={<Checkout />} /> */}
         {/* <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         <Route path="*" element={<PageNotFound />} />
